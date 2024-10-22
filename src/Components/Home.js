@@ -1,3 +1,4 @@
+import moment from "moment";
 import { useEffect, useState } from "react";
 
 function Home() {
@@ -42,12 +43,12 @@ function Home() {
     };
 
 
-    const parseDate =(date) =>{
-        const [month, day, year] = date.split("/");
-        return new Date(`${year}-${month}-${day}`);
-    }
+    // const parseDate =(date) =>{
+    //     const [month, day, year] = date.split("/");
+    //     return new Date(`${year}-${month}-${day}`);
+    // }
     const isUserActive = (endDate) => {
-       if(parseDate(endDate) >= parseDate(activeDate)){
+       if(moment(endDate) >= moment(activeDate)){
           return true;
         }
         else{
